@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Hover</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .esconde{
+            display: none;
+        }
+        .mostra:hover ~ .esconde {
+            display: block;
+            color: white;
+            background-color: red;
+            width: 300px;
+            outline: auto;
+            padding: 2px;
+            outline-color: white;
+            margin: 0;
+            text-align: center;
+        }
+        div:hover > p {
+            color: red;
+        }
+        /*
+        : -> pseudo-classe
+        hover faz com que só apareça a configuração quando o mouse passar em cima
+        div > p -> o > significa que é uma tag dentro de outra tag, ou seja tag filha imediata que estará com a configuração, por exemplo se dentro dessa div tiver outra div com um p, esse p não sofrerá modificações.
+        div:hover > p -> significa que a tag filha só terá alteração quando a condição da pseudo-classe for atendida.
+        se quiser que altere todos os p independente de onde o p está é só retirar o >, exemplo div p {} 
+        */
+    </style>
+</head>
+<body>
+    <h1>Exemplo de hover</h1>
+    <p>Passe o mouse sobre o texto abaixo</p>
+    <div>
+        <p>Teste!</p>
+        <p class="mostra">Passe o mouse aqui.<p>
+        <p class="esconde">TEXTO ESCONDIDO!</p>
+        <p class="esconde">SURPRESA!</p>
+    </div>
+    <p>Fim do exemplo</p>
+</body>
+</html>

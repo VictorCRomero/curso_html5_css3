@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grouping Tags</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: dimgray;
+            margin: 0px;
+        }
+
+        header {
+            background-color: white;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        nav {
+            background-color: darkgray;
+            padding: 3px;
+            box-shadow: 2px 2px 4px  1px rgba(0, 0, 0, 0.315);
+            /*
+            ordem de cada termo:
+            horizontal
+            vertical
+            espalhamento(blur)
+            tamanho(spread)
+            cor                        
+            
+            horizontal se negativo vai para esquerda a sombra
+            vertical se negativo vai para cima a sombra
+            */
+        }
+        nav > a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            margin-right: 30px;
+
+        }
+        nav > a:hover {
+            text-decoration: underline;
+        }
+        main {
+            background-color: white;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px 0px;
+            box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.384);
+            /*
+            border-radius: 10px 20px 30px 40px;
+            a ordem é:
+            top-left top-right bottom-right bottom-left
+            border-radius: 10px 20px
+            a ordem é:
+            top-left & bottom-right
+            top-right & bottom-left
+            */
+        }
+        section {
+            font-family: Arial, Helvetica, sans-serif;
+            
+        }
+        section > h1 {
+            margin: 0px;
+        }
+        article {
+            background-color: lightgray;
+            padding: 5px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        article > aside {
+            background-color: grey;
+        }
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 5px;
+            margin: 5px;
+        }
+        footer > p {
+            margin: 0px;
+        }
+        /*
+        Como fazer um círculo:
+        div#bola {
+            height: 100px;
+            width: 100px;
+            background-color: white;
+            margin: 10px;
+            border-radius: 50px;
+        }
+        */
+    </style>
+</head>
+<body>
+    <!-- Hoje em dia, com o HTML5, damos preferência a elementos semânticos em vez de apenas usar div para estruturar o site. -->
+     <!--
+    section -> Uma parte do site com um tema específico (um grupo de coisas relacionadas).
+    article -> Um conteúdo completo que pode está sozinho.
+    aside -> Um complemento, algo extra relacionado ao conteúdo principal.
+    -->
+    <header>
+        <h1>Meu Site</h1>
+        <nav>
+            <!-- nav -> menu para o site-->
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+        </nav>
+    </header>
+    <main>
+        <section id="assuntos">
+            <h1>Assuntos</h1>
+            <article>
+                <h2>Assuntos sobre Brasil</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus mollitia odit beatae harum tempore repellat ipsum iusto quaerat. Corrupti iure, natus eos placeat nobis eaque recusandae cumque voluptatibus architecto totam?</p>
+                <aside>
+                    <p>Artigo escrito por Victor Romero</p>
+                </aside>
+            </article>
+            <article>
+                <h2>Assuntos sobre o mundo</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus mollitia odit beatae harum tempore repellat ipsum iusto quaerat. Corrupti iure, natus eos placeat nobis eaque recusandae cumque voluptatibus architecto totam?</p>
+                <aside>
+                    <p>Artigo escrito por Victor Romero</p>
+                </aside>
+            </article>
+        </section>
+        <section id="noticias">
+            <h1>Notícias</h1>
+            <article>
+                <h2>Notícia sobre Brasil</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus mollitia odit beatae harum tempore repellat ipsum iusto quaerat. Corrupti iure, natus eos placeat nobis eaque recusandae cumque voluptatibus architecto totam?</p>
+                <aside>
+                    <p>Artigo escrito por Victor Romero</p>
+                </aside>
+            </article>
+            <article>
+                <h2>Notícia sobre o mundo</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus mollitia odit beatae harum tempore repellat ipsum iusto quaerat. Corrupti iure, natus eos placeat nobis eaque recusandae cumque voluptatibus architecto totam?</p>
+                <aside>
+                    <p>Artigo escrito por Victor Romero</p>
+                </aside>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>Desenvolvido pelo CursoemVideo</p>
+    </footer>
+    <!--
+    usado para demostrar como se faz um círculo:
+    <div id="bola"></div>
+    
+    -->
+</body>
+</html>

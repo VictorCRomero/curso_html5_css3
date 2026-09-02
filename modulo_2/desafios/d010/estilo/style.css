@@ -1,0 +1,183 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@font-face {
+    font-family: 'Android';
+    src: url('../fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+:root{
+    --cor0: #c5ebd6;
+    --cor1: #83E1AD;
+    --cor2: #3DDC84;
+    --cor3: #2FA866;
+    --cor4: #1A5C37;
+    --cor5: #063d1e;
+    --fonte-padrao:Arial, Helvetica, sans-serif;
+    --fonte-destaque:'Bebas Neue', cursive;
+    --fonte-android:'Android', sans-serif
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body    {
+    background-color: var(--cor0);
+    font-family: var(--fonte-padrao);
+}
+a.externo::after{
+    content: '\00A0\1F517';
+}
+header {
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));
+    min-height: 150px;
+    text-align: center;
+    padding-top: 40px;
+}
+header > h1 {
+    color: white;
+    font-family: var(--fonte-destaque);
+    font-size: 3em;
+    font-weight: normal;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.275);
+}
+header > p {
+    font-family: var(--fonte-padrao);
+    font-size: 1.2em;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.275);
+    color: white;
+    max-width: 600px;
+    padding: 0 10px;
+    margin: auto;
+}
+nav {
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow: 0 7px 7px rgba(0, 0, 0, 0.196);
+}
+nav > a {
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.5s ease;
+}
+nav > a:hover {
+    background-color: var(--cor3);
+    color: var(--cor5);
+}
+main {
+    min-width: 260px;
+    max-width: 1000px;
+    margin:auto;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.425);
+    border-radius: 0 0 10px 10px;
+}
+main img {
+    width: 100%;
+}
+main img.pequeno {
+    max-width: 350px;
+    display: block;
+    margin: auto;
+}
+main h1 {
+    color: var(--cor5);
+    font-weight: normal;
+    font-family: var(--fonte-android);
+    padding: 5px;
+}
+main h2 {
+    font-family: var(--fonte-android);
+    color: var(--cor4);
+    font-weight: normal;
+    font-size: 1.5em;
+    padding: 5px;
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+}
+main p {
+    margin: 25px 0;
+    text-align: justify;
+    text-indent: 30px;
+    line-height: 1.75em;
+}
+main strong {
+    color: var(--cor4);
+    font-weight: bold;
+}
+main a {
+    text-decoration: none;
+    font-weight: bold;
+    color:  var(--cor5);
+    border-radius: 5px;
+    background-color: var(--cor0);
+    padding: 2px 6px;
+}
+main a:hover {
+    text-decoration: underline;
+    color: var(--cor4);
+}
+div.video {
+    background-color: var(--cor5);
+    padding: 20px;
+    margin: 0 -20px 30px -20px;
+    position: relative;
+    padding-bottom: 56.25%;
+}
+/*padding-bottom: a porcentagem se baseia na largura da caixa*/
+/*Quando você coloca position: relative no div.video (a caixa mãe), você está criando uma regra exclusiva para aquela região da tela. Você está dizendo: "Tudo o que estiver aqui dentro agora usa esta caixa como referência, e não o topo da página inteira".É por isso que no código do vídeo (div.video > iframe) existe um position: absolute:O absolute significa: "Quero flutuar livremente".Mas como a caixa mãe tem relative, o vídeo flutua livremente apenas dentro dos limites daquela caixa.*/
+div.video > iframe {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+/* como o video ocupa 90% a esquerda e o topo 5% cada sobra 5% tanto para a direita como para a base */
+aside {
+    background-color: var(--cor1);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.284);
+}
+aside > h3 {
+    background-color: var(--cor4);
+    color: white;
+    padding: 5px;
+    margin: -10px -10px 0px -10px;
+    border-radius: 10px 10px 0 0;
+}
+aside > ul {
+    list-style-type: '\2714\00A0\00A0';
+    list-style-position: inside;
+    columns: 2;
+
+}
+footer  {
+    background-color: var(--cor5);
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+}
+footer a {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+    color: var(--cor1);
+}
+@media (max-width: 450px) {
+    nav > a {
+        display: block;
+        margin: 8px 0;
+        text-align: center;
+    }
+}
+/*A regra @media (conhecida como Media Query) é uma ferramenta do CSS usada para criar designs responsivos. Ela permite que você aplique estilos específicos dependendo das características do dispositivo do usuário, como o tamanho da tela.Em termos simples: ela funciona como uma condição "se... então..." para o visual do seu site.*/

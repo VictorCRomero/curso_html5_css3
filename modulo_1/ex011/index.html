@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mídias em HTMLS</title>
+</head>
+<body>
+    <h1>Imagem dinâmica</h1>
+    <p>Tente abrir esse site em vários dispositivos diferentes ou simplesmente aumente e diminua o tamanho do seu navegador</p>
+    <picture>
+        <!--<source media="(max-width: 750px)" srcset="foto-p.png" type="image/png">
+        <source media="(max-width: 1050px)" srcset="foto-m.png" type="image/png">
+        <img src="foto-g.png" alt="Imagem grande flexível"> -->
+        <source media="(min-width: 1050px)" srcset="foto-g.png" type="image/png">
+        <source media="(min-width: 750px)" srcset="foto-m.png" type="image/png">
+        <img src="foto-p.png" alt="Imagem grande flexível">
+        <!--tirando a a img em si que é a imagem principal ao qual sempre fica por último no comando picture, caso não for verdadeira a condição que é o source tentará ser executada a img da próxima condição, caso todas seja falsas a img em si padrão aparecerá. -->
+    </picture>
+    <h1>Reproduzindo Áudio</h1>
+    <p>Vamos aprender a reproduzir áudios em HTML5.</p>
+    <audio src="audio/happy-mistake.mp3" controls loop></audio> <!--Se colocar autoplay ele vai iniciar automaticamente a música (não funciona mais e não é indicado colocar)-->
+    <!-- Dessa forma só será compatível a todos os navegadores se a linguagem for MP3 WAV e OGG-->
+    <audio preload="metadata" controls>
+        <!--no preload tem 3 opções o metadata caregará algumas caracteristicas do áudio, none só irá carregar algo quando o usuário der o play e o auto irá carregar todo o áudio toda vez que atualizar a página (auto é PERIGOSO!)  -->
+        <!--Temos o autoplay que inicia a música sozinho, controls que gera uma casa de controle e o loop que quando acaba o áudio ele reinicia-->
+        <source src="audio/guanacast-33.mp3" type="audio/mpeg">
+        <source src="audio/guanacast-33.ogg" type="audio/ogg">
+        <source src="audio/guanacast-33.wav" type="audio/wav"> <!--WAV é muito pesado, não é recomendado botar.-->
+        <p>Infelizmente seu navegador não consegue reproduzir áudio. <a href="audio/guanacast-33.mp3">Clique aqui para baixar o arquivo MP3.</a></p>
+        <!--Irá haver um teste de verificação de um por um até achar o que estiver funcionando e irá tocar o que funcionar. Se nenhum funcionar teremos a mensagem que ao clicar será realizado o download. -->
+    </audio>
+</body>
+</html>

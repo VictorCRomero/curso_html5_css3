@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        a {
+            color: red;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        a:visited {
+            color: darkred;
+        }
+        a:hover {
+            color: black;
+            text-decoration: underline;
+        }
+        a:active {
+            color: darkblue;
+        }
+        .especial {
+            background-color: rgb(255, 140, 140);
+            color: blueviolet;
+        }
+        .especial::before {
+            content: '⟹';
+        }
+        .especial::after {
+            content: '⟸';
+        }
+        h1::first-letter {
+            font-size: 200%;
+            font-weight: bold;
+            color: #F39209;
+        }
+        h1::after {
+            content: "";
+            display: block;
+            width: 400px;
+            height: 3px;
+            background-color: #125189;
+            margin: auto 0;
+        }
+        li::selection {
+                background-color: #d51414;
+                color: white;
+        }
+        /*
+         Por padrão, os pseudo-elementos nascem com o comportamento inline (como se fossem uma palavra dentro de um texto). Elementos inline não aceitam largura (width) nem altura (height), e também não aceitam centralização com margin: auto.
+         Ao mudar para display: block;, você transforma essa linha invisível em um "bloco sólido" (como um parágrafo ou uma div). Agora que ela é um bloco, o navegador aceita os seus comandos de tamanho, ex.: width: 50px e height: 3px, e permite que ela seja jogada para a linha de baixo do título.
+         elementos do tipo block possuem uma regra absoluta: eles exigem uma linha inteira e exclusiva para eles.
+         Mesmo que a linha azul tenha apenas 50px de largura, o comportamento do block força o navegador a Criar uma quebra de linha automática logo após o texto do h1 e empurra o ::after para a linha de baixo impedindo que qualquer outro elemento fique ao lado dele.
+
+         display: inline-block se comporta quase exatamente como um <span>, mas com uma diferença crucial: ele ganha as características de um bloco, por ex.: aceita altura, largura, margem.
+
+         after e before precisam do content: ''; porque é onde informa onde há um conteúdo, sem ele não é informado nada.
+
+        pseudo-classes
+        :visited -> já cliquei no link
+        :hover -> passei em cima do link com o mouse
+        :active -> cliquei no link
+        :checked -> O usuário marcou esta opção
+        :empty -> Este elemento está totalmente vazio
+        :focus -> O cursor do usuário está ativo aqui dentro, quando usa tag para andar na pagina
+
+        pseudo-elements
+        ::after -> depois do elemento
+        ::before -> antes do elemento
+        ::first-letter -> primeira letra do elemento
+        ::first-line -> primeira linha do elemento do navegador
+        ::selection -> seleção de texto do elemento
+        */
+        /*
+        # = id
+        . = class
+        : = pseudo-class
+        :: = pseudo-element
+        > = children
+        */
+    </style>
+</head>
+<body>
+    <h1>Personalizando Links</h1>
+    <ul>
+        <li><a href="https://gustavoguanabara.github.io" class="especial">Repositório GitHub</a></li>
+        <li><a href="https://youtube.com/cursoemvideo/" class="especial">Canal do Youtube</a></li>
+        <li><a href="https://wwww.cursoemvideo.com">Site do Curso em Vídeo</a></li>
+    </ul>
+</body>
+</html>

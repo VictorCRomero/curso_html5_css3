@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Múltiplos Cliques c/ CSS (:has)</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Esconde todos os checkboxes do sistema de uma vez */
+        .trigger-checkbox {
+            display: none;
+        }
+
+        /* Estilização padrão dos botões */
+        .botao-clique {
+            display: block;
+            cursor: pointer;
+            color: #125189;
+            font-weight: bold;
+            padding: 10px;
+            background-color: #eef5fc;
+            margin-top: 10px;
+            border-radius: 4px;
+            transition: all 0.4s ease;
+        }
+
+        .botao-clique:hover {
+            background-color: #dbeaf8;
+        }
+
+        /* Configuração base para todos os conteúdos escondidos */
+        .conteudo-escondido {
+            display: block;
+            opacity: 0;
+            visibility: hidden;
+            max-height: 0;
+            overflow: hidden;
+            color: white;
+            padding: 0 10px;
+            border-radius: 4px;
+            transition: all 0.5s ease;
+        }
+        /* Cores customizadas para cada bloco de resposta */
+        .box-azul { background-color: #2980b9; }
+        .box-verde { background-color: #27ae60; }
+        .box-laranja { background-color: #e67e22; }
+
+        /* --- REGRAS DE ATIVAÇÃO VIA :HAS() --- */
+
+        /* Tradução: "Se a div (.bloco-faq) POSSUIR um checkbox marcado, mude o botão dentro dela" */
+        .bloco-faq:has(.trigger-checkbox:checked) .botao-clique {
+            background-color: #125189;
+            color: white;
+        }
+
+        /* Tradução: "Se a div (.bloco-faq) POSSUIR um checkbox marcado, abra o conteúdo escondido dela" */
+        .bloco-faq:has(.trigger-checkbox:checked) .conteudo-escondido {
+            opacity: 1;
+            visibility: visible;
+            max-height: 200px;
+            padding: 10px;
+            margin-top: 5px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Perguntas Frequentes</h1>
+        <p>Clique nos tópicos abaixo para ver as respostas:</p>
+        
+        <!-- Adicionamos a classe "bloco-faq" em cada div para o :has() poder monitorá-las -->
+        
+        <!-- Bloco 1 -->
+        <div class="bloco-faq">
+            <input type="checkbox" id="trigger-1" class="trigger-checkbox">
+            <label for="trigger-1" class="botao-clique">1. O que é CSS?</label>
+            <p class="conteudo-escondido box-azul">
+                Cascading Style Sheets (Folhas de Estilo em Cascata) é usado para estilizar a aparência de uma página web.
+            </p>
+        </div>
+        
+        <!-- Bloco 2 -->
+        <div class="bloco-faq">
+            <input type="checkbox" id="trigger-2" class="trigger-checkbox">
+            <label for="trigger-2" class="botao-clique">2. O que é HTML?</label>
+            <p class="conteudo-escondido box-verde">
+                HyperText Markup Language é a linguagem de marcação padrão para criar a estrutura de páginas web.
+            </p>
+        </div>
+        
+        <!-- Bloco 3 -->
+        <div class="bloco-faq">
+            <input type="checkbox" id="trigger-3" class="trigger-checkbox">
+            <label for="trigger-3" class="botao-clique">3. Precisa de JavaScript para isso?</label>
+            <p class="conteudo-escondido box-laranja">
+                Não! Como você pode ver, usamos apenas a lógica dos seletores de CSS nativos para criar essa interatividade.
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>

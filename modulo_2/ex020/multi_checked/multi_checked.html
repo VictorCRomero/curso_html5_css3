@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplos Cliques com CSS</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Esconde todos os checkboxes do sistema de uma vez */
+        .trigger-checkbox {
+            display: none;
+        }
+
+        /* Estilização padrão dos botões */
+        .botao-clique {
+            display: block;
+            cursor: pointer;
+            color: #125189;
+            font-weight: bold;
+            padding: 10px;
+            background-color: #eef5fc;
+            margin: 10px;
+            border-radius: 4px;
+            transition: all 0.4s ease;
+        }
+
+        .botao-clique:hover {
+            background-color: #dbeaf8;
+        }
+
+        /* Configuração base para todos os conteúdos escondidos */
+        .conteudo-escondido {
+            display: block;
+            opacity: 0;
+            visibility: hidden;
+            max-height: 0;
+            overflow: hidden;
+            color: white;
+            padding: 0 10px;
+            border-radius: 4px;
+            transition: all 0.5s ease;
+        }
+                /* Cores customizadas para cada bloco de resposta */
+        .box-azul { background-color: #2980b9; }
+        .box-verde { background-color: #27ae60; }
+        .box-laranja { background-color: #e67e22; }
+        /*
+        1. max-height: 0; (Zera o tamanho vertical)O que faz: Define que a altura máxima permitida para o elemento é zero pixels.Por que usamos: É isso que faz o texto "esmagar" verticalmente. Quando o botão for clicado, nós mudamos esse valor para max-height: 200px, fazendo o painel crescer de cima para baixo como uma cortina se abrindo. O CSS consegue animar números (de 0 até 200), criando o efeito de deslizamento.
+
+        2. overflow: hidden; (Corta o que vazar)O que faz: Diz ao navegador: "Se o conteúdo de dentro deste bloco for maior que o tamanho do bloco, esconda a parte que sobrou".Por que usamos: Como a altura do bloco está definida como 0 (pela linha de cima), o texto de dentro teoricamente continuaria visível, vazando para fora e ficando em cima dos outros botões. O overflow: hidden garante que, enquanto a altura for zero, o texto fique totalmente invisível e "prensado" lá dentro.
+        
+        3. opacity: 0; (Deixa transparente)O que faz: Controla a opacidade (transparência). O valor 0 significa 100% transparente (invisível) e 1 significa 100% opaco (totalmente visível).Por que usamos: Usamos para criar o efeito de fade-in (surgimento suave). Quando o bloco abre, a opacidade vai subindo de 0 até 1 ao longo de 0.4 segundos, fazendo o texto aparecer suavemente em vez de brotar do nada.
+        
+        4. visibility: hidden; (Desliga as interações)O que faz: Torna o elemento invisível para o usuário, para os leitores de tela (acessibilidade) e para o mouse.Por que usamos: Mesmo que um elemento esteja totalmente transparente (opacity: 0), ele ainda está fisicamente ali. Se houvesse um link ou um botão dentro dele, o usuário poderia acabar clicando sem querer em algo invisível. O visibility: hidden "desliga" o elemento temporariamente para que ninguém interaja com ele enquanto estiver fechado.
+        
+        5. transition é o que cria a mágica das animações suaves no CSS. Em vez de uma mudança de estilo acontecer de forma bruta e instantânea, ela faz a transformação acontecer gradualmente.
+
+        5.1. all (O que vai animar)Diz ao navegador para aplicar o efeito de transição em todas as propriedades visuais que mudarem.Se você mudar a cor do fundo (background-color), o tamanho da letra (font-size) e a cor do texto (color) ao mesmo tempo, todas elas vão mudar suavemente.Dica: Você poderia especificar apenas uma propriedade se quisesse, escrevendo transition: color 0.3s ease;. O all facilita a vida porque pega tudo de uma vez.2. 0.3s (A duração)Define o tempo que a animação vai levar para começar e terminar.Neste caso, leva 0.3 segundos (trezentos milissegundos). É um tempo ideal para a interface parecer rápida, fluida e natural ao olho humano.Se você colocasse 2s, a mudança levaria 2 longos segundos para terminar, parecendo em câmera lenta.
+        3. ease (O ritmo da velocidade)É o "desenho" da velocidade da animação durante esses 0.3 segundos. O ease é o padrão do navegador e faz com que a animação comece um pouco devagar, acelere no meio e desacelere suavemente no final. Isso imita o movimento de objetos no mundo real.Existem outros ritmos que você pode testar:linear: Mantém exatamente a mesma velocidade do início ao fim (parece um movimento de robô).ease-in: Começa bem devagar e termina rápido.ease-out: Começa rápido e desacelere suavemente no final.
+        */
+
+        /* --- REGRAS DE ATIVAÇÃO VIA CHECKBOX --- */
+        /*
+        Diferença entre + e ~
+        X + Y → Só pega o primeiro Y se ele for o próximo da fila.
+        X ~ Y → Pega todos os Y que estiverem abaixo, não importa quantos elementos estejam no meio.
+        */
+        /* Quando QUALQUER trigger for marcado, altera o botão irmão seguinte */
+        .trigger-checkbox:checked + .botao-clique {
+            background-color: #125189;
+            color: white;
+        }
+
+        /* Quando QUALQUER trigger for marcado, abre o conteúdo irmão seguinte */
+        .trigger-checkbox:checked ~ .conteudo-escondido {
+            opacity: 1;
+            visibility: visible;
+            max-height: 200px;
+            padding: 10px;
+            margin: 5px;
+            overflow-y: auto;
+        }
+        /*overflow-y: auto; cria barra de rolagem vertical para o conteúdo*/
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Perguntas Frequentes</h1>
+        <p>Clique nos tópicos abaixo para ver as respostas:</p>
+        
+        <!-- Bloco 1 -->
+        <div>
+            <input type="checkbox" id="trigger-1" class="trigger-checkbox">
+            <label for="trigger-1" class="botao-clique">1. O que é CSS?</label>
+            <p class="conteudo-escondido box-azul">
+                Cascading Style Sheets (Folhas de Estilo em Cascata) é usado para estilizar a aparência de uma página web.
+            </p>
+        </div>
+        
+        <!-- Bloco 2 -->
+        <div>
+            <input type="checkbox" id="trigger-2" class="trigger-checkbox">
+            <label for="trigger-2" class="botao-clique">2. O que é HTML?</label>
+            <p class="conteudo-escondido box-verde">
+                HyperText Markup Language é a linguagem de marcação padrão para criar a estrutura de páginas web.
+            </p>
+        </div>
+        
+        <!-- Bloco 3 (Corrigido) -->
+        <div>
+            <input type="checkbox" id="trigger-3" class="trigger-checkbox">
+            <label for="trigger-3" class="botao-clique">3. Precisa de JavaScript para isso?</label>
+            <p class="conteudo-escondido box-laranja">
+                Não! Como você pode ver, usamos apenas a lógica dos seletores de CSS nativos para criar essa interatividade.
+            </p>
+            
+        </div>
+    </div>
+
+</body>
+</html>

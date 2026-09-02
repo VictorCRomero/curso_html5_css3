@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhando com Links</title>
+</head>
+<body>
+    <!--Para incapsular e colocar alguma tag aperte crtl+shit+p e depois procure wwa(ou abb em pt/br) + enter depois digite a tag que queres + enter -->
+    <!--Para procurar arquivos aperte crtl + espaço-->
+    <!--target="_blank" ->  abre em outra aba a página-->
+    <h1>Usando Links</h1>
+    <h2>Usando links externos</h2>
+    <!--
+    noopener → segurança.
+    noreferrer → privacidade.
+    nofollow → SEO. (Search Engine Optimization)
+    ugc → conteúdo gerado por usuários.
+    sponsored → links patrocinados.
+    external → apenas informa que o link é para outro site (uso pouco relevante hoje).
+    -->
+    <p>Você pode acessar o meu <a href="https://gustavoguanabara.github.io/" target="_blank" rel="external sponsered">repositório público no Github</a>.</p>
+    <p>Você também pode acessar o meu <a href="https://youtube.com/cursoemvideo/" target="_blank" rel="external noopener noreferrer" >canal gratuito no YouTube</a>.</p>
+    <h2>Usando links internos</h2>
+    <p>Está é a primeira página do site. Se você quiser, pode acessar também a minha <a href="pag002.html" target="_self" rel="next">segunda página</a>.</p> <!-- _self quer dizer que irá abrir na aba ou você pode não colocar target. -->
+    <p> você pode acessar também a minha <a href="noticias/pag003.html" rel="next">terceira página</a> que é de notícias.</p>
+    <h1>Links para downloads</h1>
+    <ul>
+        <li><a href="livro/oi.pdf" download="oi.pdf" type="application/pdf" target="_blank">Baixar o livro em pdf</a>.</li>
+        <!--iana.org/asignments/media-types -> É um site para saber os tipos de media ex: type="application/zip-->
+        <li><a href="livro/oi.rar" download="oi.rar" type="application/rar">Livro compactado em rar</a>.</li><!--href="#" significa que é um link vázio. -->
+        <li><a href="livro/oi.zip" download="oi.zip" type="application/zip">Livro compactado em zip</a></li>
+    </ul>
+</body>
+</html>
