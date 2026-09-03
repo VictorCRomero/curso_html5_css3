@@ -3,15 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste de fundo</title>
+    <title>Fundo fixo de tela</title>
     <style>
         body {
+            height: 100vh;
+            /*
             background-color: black;
             background-image: url('imagens/wallpaper002.jpg');
             background-position: center center;
             background-size: cover;
             background-repeat: no-repeat;
+            background-attachment: fixed;
+            */
+            background: black url('imagens/wallpaper002.jpg') center center / cover no-repeat fixed;
         }
+        /*
+        shorthand - background
+        color > image > position > / > size > repeat > attachment 
+        é preciso usar a / para o navegador entenda o comando 
+        Como a posição (ex: center center, top left, 50% 50%) e o tamanho (ex: cover, contain, 100px) usam o mesmo tipo de unidade (palavras-chave, pixels ou porcentagem), o navegador ficaria confuso sem a barra.
+        */
         main {
             background-color: white;
             width: 400px;
@@ -25,7 +36,7 @@
 <body>
     <main>
         <h1>Teste de Imagem de Fundo</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora laudantium non eum pariatur nam est numquam quasi aliquid, soluta inventore debitis officiis repellat quidem dolor odio consequuntur architecto possimus libero. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci, iste a aliquid, debitis sit beatae quaerat incidunt quod sint, doloremque harum voluptate excepturi nemo repellat possimus quasi optio quae nam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus sequi alias esse voluptas ullam. Fugit sed reprehenderit eos in natus voluptatibus possimus? Amet quas autem harum itaque molestiae tempora ullam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quaerat veritatis dolore illo. At id iusto veritatis ullam laudantium. Enim distinctio nihil placeat cupiditate reiciendis, nobis temporibus quod recusandae id.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora laudantium non eum pariatur nam est numquam quasi aliquid, soluta inventore debitis officiis repellat quidem dolor odio consequuntur architecto possimus libero. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci, iste a aliquid, debitis sit beatae quaerat incidunt quod sint, doloremque harum voluptate excepturi nemo repellat possimus quasi optio quae nam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus sequi alias esse voluptas ullam. Fugit sed reprehenderit eos in natus voluptatibus possimus? Amet quas autem harum itaque molestiae tempora ullam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quaerat veritatis dolore illo. At id iusto veritatis ullam laudantium. Enim distinctio nihil placeat cupiditate reiciendis, nobis temporibus quod recusandae id.aliquid, debitis sit beatae quaerat incidunt quod sint, doloremque harum voluptate excepturi nemo repellat possimus quasi optio quae nam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus sequi alias esse voluptas ullam. Fugit sed reprehenderit eos in natus voluptatibus possimus? Amet quas autem harum itaque molestiae tempora ullam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quaerat veritatis dolore illo. At id iusto veritatis ullam laudantium. Enim distinctio nihil placeat cupiditate reiciendis, nobis temporibus quod recusandae id.aliquid, debitis sit beatae quaerat incidunt quod sint, doloremque harum voluptate excepturi nemo repellat possimus quasi optio quae nam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus sequi alias esse voluptas ullam. Fugit sed reprehenderit eos in natus voluptatibus possimus? Amet quas autem harum itaque molestiae tempora ullam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quaerat veritatis dolore illo. At id iusto veritatis ullam laudantium. Enim distinctio nihil placeat cupiditate reiciendis, nobis temporibus quod recusandae id.Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora laudantium non eum pariatur nam est numquam quasi aliquid, soluta inventore debitis officiis repellat quidem dolor odio consequuntur architecto possimus libero. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci, iste a aliquid, debitis sit beatae quaerat incidunt quod sint, doloremque harum voluptate excepturi nemo repellat possimus quasi optio quae nam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus sequi alias esse voluptas ullam. Fugit sed reprehenderit eos in natus voluptatibus possimus? Amet quas autem harum itaque molestiae tempora ullam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quaerat veritatis dolore illo. At id iusto veritatis ullam laudantium. Enim distinctio nihil placeat cupiditate reiciendis, nobis temporibus quod recusandae id.aliquid, debitis sit beatae quaerat incidunt quod sint, doloremque harum voluptate excepturi nemo repellat possimus quasi optio quae nam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus sequi alias esse voluptas ullam. Fugit sed reprehenderit eos in natus voluptatibus possimus? Amet quas autem harum itaque molestiae tempora ullam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quaerat veritatis dolore illo. At id iusto veritatis ullam laudantium. Enim distinctio nihil placeat cupiditate reiciendis, nobis temporibus quod recusandae id.aliquid, debitis sit beatae quaerat incidunt quod sint, doloremque harum voluptate excepturi nemo repellat possimus quasi optio quae nam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus sequi alias esse voluptas ullam. Fugit sed reprehenderit eos in natus voluptatibus possimus? Amet quas autem harum itaque molestiae tempora ullam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quaerat veritatis dolore illo. At id iusto veritatis ullam laudantium. Enim distinctio nihil placeat cupiditate reiciendis, nobis temporibus quod recusandae id.</p>
     </main>
 </body>
 </html>
