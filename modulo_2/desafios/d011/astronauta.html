@@ -5,22 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Astronauta</title>
     <style>
-        #espaco {
-            position: relative;
-            height: 98.11vh;
-            background: black url('imagens/espaco.jpg') center center / cover no-repeat fixed ;
-        }
-        #astronauta {
-            position: absolute;
-            background: url('imagens/astronauta.png');
-            height: 500px;
-            width: 500px;
-            left: 50%;
-            top: 50%;
-            
-
-
-        }
+   html, body {
+    margin: 0;
+    padding: 0;
+}
+#espaco {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    
+    background: black url('imagens/espaco.jpg') center center / cover no-repeat scroll;
+}
+#astronauta {
+    background: url('imagens/astronauta.png') center center / cover no-repeat;
+    padding: 10px;
+    height: 300px;
+    width: 300px;
+}
     </style>
 </head>
 <body>
