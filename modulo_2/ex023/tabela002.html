@@ -11,15 +11,35 @@
         table {
             width: 500px;
             border-collapse: collapse;
+            position: relative;
         }
         td, th {
             border: 1px solid black;
             padding: 10px;
         }
-        thead {
+        caption {
+            font-size: 1.25em;
+            font-weight: bold;
+            padding: 5px;
+            background-color: lightgray;
+            border-collapse: collapse;
+        }
+        thead, tfoot {
             background-color: gray;
             color: white;
         }
+        thead > tr >  th {
+            position: sticky;
+            top: -1px;
+            background-color: gray;
+        }
+        tbody > tr:nth-child(2n) {
+            background-color: lightgray;
+        }
+        /* 
+        even - par, pode usar 2n , a contagem começa em 1
+        odd - ímpar, pode usar 2n-1 ou 2n+1
+        */
         td.num {
             text-align: right;
         }
@@ -29,6 +49,7 @@
     <h1>Uso de Tabelas Grandes</h1>
     <!--
         ANATOMIA PARA TABELAS GRANDES
+            CAPTION
             THEAD
                 TR,TD,TH
             TBODY
@@ -37,10 +58,11 @@
                 TR,TD,TH
     -->
     <table>
+        <caption> População das Unidades Federativas 2026</caption>
         <thead>
             <tr>
-                <th>Estado</th>
-                <th>População</th>
+                <th scope="col">Estado</th>
+                <th scope="col" style="width: 50px;">População</th>
             </tr>
         </thead>
         <tbody>
@@ -155,10 +177,15 @@
         </tbody>
         <tfoot>
             <tr>
-                <th>Total de Habitantes</th>
+                <th scope="row">Total de Habitantes</th>
                 <td class="num"><strong>214211951</strong></td>
             </tr>
         </tfoot>
     </table>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore voluptates non alias quam natus quis, distinctio quas deleniti a dolore dolorum quos in necessitatibus molestiae earum. Iure dolore debitis at? Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus quam harum possimus maxime delectus iure quia, corporis eos ab soluta doloremque optio sunt omnis facilis minus officiis dolorum est pariatur? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus, officia pariatur. Cumque, velit voluptates eaque perferendis temporibus corrupti asperiores accusamus laudantium aperiam deleniti sint, odit et placeat doloribus nostrum doloremque? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam sit explicabo sed laboriosam esse, ullam hic iste facere reprehenderit perferendis eum repudiandae in quos tenetur est possimus odit dolor. Veritatis!</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore voluptates non alias quam natus quis, distinctio quas deleniti a dolore dolorum quos in necessitatibus molestiae earum. Iure dolore debitis at? Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus quam harum possimus maxime delectus iure quia, corporis eos ab soluta doloremque optio sunt omnis facilis minus officiis dolorum est pariatur? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus, officia pariatur. Cumque, velit voluptates eaque perferendis temporibus corrupti asperiores accusamus laudantium aperiam deleniti sint, odit et placeat doloribus nostrum doloremque? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam sit explicabo sed laboriosam esse, ullam hic iste facere reprehenderit perferendis eum repudiandae in quos tenetur est possimus odit dolor. Veritatis!</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore voluptates non alias quam natus quis, distinctio quas deleniti a dolore dolorum quos in necessitatibus molestiae earum. Iure dolore debitis at? Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus quam harum possimus maxime delectus iure quia, corporis eos ab soluta doloremque optio sunt omnis facilis minus officiis dolorum est pariatur? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus, officia pariatur. Cumque, velit voluptates eaque perferendis temporibus corrupti asperiores accusamus laudantium aperiam deleniti sint, odit et placeat doloribus nostrum doloremque? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam sit explicabo sed laboriosam esse, ullam hic iste facere reprehenderit perferendis eum repudiandae in quos tenetur est possimus odit dolor. Veritatis!</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore voluptates non alias quam natus quis, distinctio quas deleniti a dolore dolorum quos in necessitatibus molestiae earum. Iure dolore debitis at? Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus quam harum possimus maxime delectus iure quia, corporis eos ab soluta doloremque optio sunt omnis facilis minus officiis dolorum est pariatur? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus, officia pariatur. Cumque, velit voluptates eaque perferendis temporibus corrupti asperiores accusamus laudantium aperiam deleniti sint, odit et placeat doloribus nostrum doloremque? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam sit explicabo sed laboriosam esse, ullam hic iste facere reprehenderit perferendis eum repudiandae in quos tenetur est possimus odit dolor. Veritatis!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore voluptates non alias quam natus quis, distinctio quas deleniti a dolore dolorum quos in necessitatibus molestiae earum. Iure dolore debitis at? Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus quam harum possimus maxime delectus iure quia, corporis eos ab soluta doloremque optio sunt omnis facilis minus officiis dolorum est pariatur? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus, officia pariatur. Cumque, velit voluptates eaque perferendis temporibus corrupti asperiores accusamus laudantium aperiam deleniti sint, odit et placeat doloribus nostrum doloremque? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam sit explicabo sed laboriosam esse, ullam hic iste facere reprehenderit perferendis eum repudiandae in quos tenetur est possimus odit dolor. Veritatis!</p>
 </body>
 </html>
