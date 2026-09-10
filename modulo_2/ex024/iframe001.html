@@ -4,12 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estudos de iframe</title>
+    <style>
+        iframe {
+            height: 400px;
+            width: 400px;
+        }
+    </style>
 </head>
 <body>
     <h1>Testando o uso de um iframe</h1>
-    <p>Acessando o site do <iframe src="https://www.cursoemvideo.com/" frameborder="0"></iframe> para aprender a programar.</p>
-    <!--frameborder="0" retira a borda visível do iframe-->
-    <p>O site do <iframe src="https://www.google.com" frameborder="0"></iframe> também é muito legal!</p>
-    <p>O repositório do Guanabara <iframe src="https://gustavoguanabara.github.io" frameborder="0"><a href="https://gustavoguanabara.github.io" target="_blank" rel="external sponsored"></a></iframe> também é muito legal!</p>
+    <!--
+    Tamanho padrão do iframe é de 300x150
+    soberano é o que foi definido pelo CSS e não pelo HTML
+    -->
+    <p>Acessando o site <iframe src="https://www.cursoemvideo.com/" frameborder="0" height="500"><a href="https://www.cursoemvideo.com/" target="_blank" rel="external sponsored">cursoemvideo</a></iframe> para aprender a programar.</p>
+    <!--frameborder="0" retira a borda visível do iframe só aceita 0 e 1-->
+    <p>O site do <iframe src="https://www.google.com" frameborder="0"></iframe> também é muito legal!, pena que não funciona por causa das proteções.</p>
+    <p>O repositório do Guanabara <iframe src="https://gustavoguanabara.github.io" frameborder="0" height="500" width="500" scrolling="no"><a href="https://gustavoguanabara.github.io" target="_blank" rel="external sponsored">GitHub</a></iframe> também é muito legal!</p>
+    <!--
+    Existe:
+    scrolling="no" não tem barra de rolagem
+    scrolling="yes" força a ter a rolagem
+    scrolling="auto" gera a rolagem se precisar
+    
+    Podemos usar propriedades de CSS (como overflow: hidden ou overflow: auto) para gerenciar a rolagem do conteúdo incorporado, mas não funciona com links externos.
+    -->
 </body>
 </html>
