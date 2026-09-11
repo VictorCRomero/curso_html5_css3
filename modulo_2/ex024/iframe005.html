@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iframes</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        iframe {
+            display: block;
+            margin: auto;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Teste com iframe</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam doloremque dignissimos praesentium maxime ipsam culpa facere mollitia! Facilis laboriosam adipisci sapiente a saepe nostrum dolorum! Numquam pariatur maiores enim eum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae laudantium fugiat cum voluptates ab odit incidunt adipisci quas? Aut assumenda hic sapiente nobis voluptatibus, modi dignissimos delectus esse magnam? Nulla? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus sint voluptatum sed fuga atque doloribus facere explicabo eum adipisci, soluta dicta, veritatis totam laboriosam iste nobis consectetur voluptate, optio quos.</p>
+    <iframe src="paginas_extras/pag005.html" frameborder="0" height="80" width="400" sandbox="allow-scripts" referrerpolicy="no-referrer"><p>infelizmente seu navegador não é compatível com isso!</p></iframe>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero neque temporibus sit beatae rerum earum quidem harum delectus maiores, suscipit quae veritatis hic deleniti aspernatur iusto itaque debitis ipsam eveniet? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos placeat officiis rem veritatis voluptates, facere repellendus magni ducimus praesentium, dolore debitis optio, assumenda quod? Sint eius similique fugiat nesciunt a. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis id perferendis dolores est error pariatur, alias perspiciatis vero consequuntur hic quasi. Reiciendis cumque minima in consectetur aliquid explicabo voluptatibus ex!</p>
+    <!--
+    referrerpolicy
+
+    strict-origin-when-cross-origin (O Padrão dos Navegadores):Se o site do iframe for igual ao seu, envia a URL completa.Se for um site diferente (ex: seu site envia para o Google), ele só diz o domínio básico (ex: https://meusite.com), escondendo a página exata (ex: /estudos/iframe.html).Se o seu site usa HTTPS e o link for para um site HTTP (inseguro), ele não envia nada.
+    
+    origin-when-cross-origin: Funciona igual ao anterior, mas envia o domínio básico mesmo se você estiver navegando de um site seguro (HTTPS) para um inseguro (HTTP).
+    
+    strict-origin: Envia apenas o domínio básico (ex: https://meusite.com) para qualquer site, desde que a segurança do protocolo seja mantida (HTTPS para HTTPS).
+    
+    origin: Envia apenas o domínio básico para qualquer site, não importando se é seguro ou não.⚠️ Nível Baixo de Privacidade (Não recomendado)
+    
+    no-referrer-when-downgrade: Envia a URL completa para qualquer site, exceto se o seu site for HTTPS e o site de destino for HTTP (inseguro).
+    
+    unsafe-url: Envia a URL completa para qualquer site, em qualquer situação. É considerado inseguro porque pode vazar parâmetros internos e dados que estão na sua barra de endereço.
+
+    no-referrer: Não envia absolutamente nada. O site de destino não sabe de onde o usuário veio.
+    
+    Antigamente, o no-referrer-when-downgrade era o comportamento padrão de todos os navegadores (Chrome, Firefox, Edge) se você não escrevesse nada no código.Porém, as leis de privacidade mudaram. Hoje em dia, os navegadores acham que enviar a URL completa (como no Cenário A) expõe demais o usuário. Por isso, o novo padrão da internet virou o strict-origin-when-cross-origin (que só envia o domínio principal, ex: https://seusite.com).
+    
+    sandbox
+
+    .Proibe executar qualquer script (JavaScript). 
+    .Proibe enviar formulários. 
+    .Proibe abrir links que redirecionem a sua página principal ou abram novas abas. 
+    .Proibe salvar cookies ou acessar o armazenamento local.
+
+    Podesse dar permissões específicas.
+
+    allow-scripts: Permite que a página dentro do iframe execute JavaScript. (Atenção: use com cuidado, pois scripts podem rodar códigos maliciosos).
+
+    allow-same-origin: Permite que o site do iframe mantenha seus cookies e sessões de login ativas. Se não colocar isso, ele é tratado como um site totalmente isolado e sem memória.
+    
+    allow-forms: Permite que o usuário envie formulários (como campos de login ou cadastro) de dentro do iframe.
+    
+    allow-popups: Permite que o site do iframe abra links em novas abas ou janelas pop-up (usando target="_blank").
+    
+    allow-top-navigation: Permite que o iframe mude a URL da sua página principal (o site de fora).
+
+
+    -->
+</body>
+</html>
