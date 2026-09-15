@@ -12,7 +12,7 @@
 </head>
 <body>
     <h1>Meu Primeiro formulário</h1>
-        <form action="cadastro.php" autocomplete="off">
+        <form action="cadastro.php" method="get" autocomplete="off">
             <p>
                 <label for="Inome">Nome:</label> 
                 <input type="text" name="Nome" id="Inome"></p>
@@ -26,4 +26,18 @@
 <!--
 Label é a etiqueta do campo
 Action é a tag que vincula qual programa irá processar as informações inseridas
+
+Como funciona o method="get" 
+Onde vão os dados: Anexados diretamente na URL (ex: ://site.com).
+Visibilidade: Totalmente visível para qualquer um ver na barra do navegador.
+Limite de tamanho: Bem limitado (geralmente uns 2.000 a 3.000 caracteres) porque a URL não aguenta textos gigantes.}
+Segurança: Baixa para dados sensíveis. Nunca use para senhas ou dados pessoais.
+Quando usar: Em mecanismos de busca, filtros de produtos ou páginas que você quer que o usuário possa salvar nos favoritos e compartilhar o link exato. 
+
+Como funciona o method="post"
+Onde vão os dados: Dentro do corpo (body) da requisição HTTP, ocultos do usuário comum.
+Visibilidade: Invisível na barra de endereços.
+Limite de tamanho: Praticamente ilimitado, permitindo enviar textos longos, múltiplos campos e até arquivos (como fotos e PDFs).
+Segurança: Mais seguro para dados privados (mas lembre-se: ainda exige HTTPS para criptografar no meio do caminho).
+Quando usar: Formulários de login, cadastro, alteração de dados, envio de arquivos ou qualquer ação que mude algo no servidor
 -->
