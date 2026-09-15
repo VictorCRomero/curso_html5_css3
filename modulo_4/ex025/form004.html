@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+</head>
+<body>
+    <h1>Exemplo de formulário</h1>
+    <form action="cadastro.php" method="get" autocomplete="on">
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+            <p>
+                <label for="inome">Nome</label>
+                <input type="text" name="nome" id="inome" minlength="5" maxlength="20" required>
+            </p>
+            <p>
+                <label for="iemail">E-mail</label>
+                <input type="email" name="email" id="iemail" autocomplete="email" required>
+            </p>
+            <p>
+                <label for="itel">Telefone</label>
+                <input type="tel" name="tel" id="itel" autocomplete="tel" placeholder="(xx)xxxxx-xxxx" required pattern="^\(\d{2}\)\d{4,5}-\d{4}$">
+            </p>
+        </fieldset>
+        <!--pattern serve para validar o formato exato do que o usuário digita em um campo de formulário, usando uma regra matemática chamada Expressão Regular (ou RegEx) Regular Expression.
+        Onde funciona: Ele é usado em campos de texto do tipo <input type="text">, tel, email, password, url ou search.
+        A Regra (Expressão Regular): O valor que você coloca dentro do pattern="..." é um código que dita o que é permitido. Ele define letras maiúsculas, minúsculas, números exatos, quantidade de caracteres e símbolos obrigatórios (como parênteses ou hífens).
+        Se o campo estiver vazio: Se o campo não tiver o atributo required, o navegador vai aceitar se ele estiver em branco. O pattern só entra em ação se o usuário digitar alguma coisa lá dentro.
+
+        Uma RegEx é como um "supermecanismo de busca e validação" para textos.
+        ^ (Circunflexo): Significa "Começa com...". Ele força o motor da RegEx a olhar apenas para o primeiríssimo caractere do texto.$ (Cifrão): Significa "Termina com...". Ele força o motor da RegEx a olhar apenas para o último caractere do texto.
+        Se você escrever \d na RegEx, o computador entende: "procure por qualquer número de 0 a 9".
+        Se você escrever [a-z] na RegEx, o computador entende: "procure por qualquer letra minúscula".
+        Se você escrever {5}, o computador entende: "o item anterior tem que se repetir exatamente 5 vezes".
+        Se você escrever \d na RegEx, o computador entende: "procure por qualquer número de 0 a 9".
+        Se você escrever [a-z] na RegEx, o computador entende: "procure por qualquer letra minúscula".
+        Se você escrever {5}, o computador entende: "o item anterior tem que se repetir exatamente 5 vezes".
+        Escrever \w é exatamente o mesmo que escrever [a-zA-Z0-9_].
+        O \s serve principalmente para permitir espaços em campos de texto onde o usuário precisa digitar mais de uma palavra separados por espaços
+        -->
+        <!--Estudar mais sobre RegEx-->
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Limpar">
+    </form>
+</body>
+</html>
