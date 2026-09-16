@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+</head>
+<body onload="ConfigurarAnoMax()">
+    <h1>Exemplo de Formulário</h1>
+    <form action="cadastro.php" method="get" autocomplete="on">
+        <p>
+            <label for="iano">Em que ano você nasceu? </label>
+            <input type="number" name="ano" id="iano" required min="1900" max="" oninput="CalcIdade()">
+        </p>
+        <p>
+            <label for="iidade">Sua idade é: </label>
+            <output id="iidade">0</output>
+        </p>
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar" onclick="iidade.innerHTML = 0">
+        </p>
+    </form>
+    <script>
+        // Nova função para travar o valor máximo no ano atual
+        function ConfigurarAnoMax() {
+            let atual = new Date().getFullYear();
+            // Injeta o ano atual (2026) diretamente no atributo max do input
+            iano.max = atual;
+        }
+        function CalcIdade() {
+            let atual = new Date().getFullYear();
+            let anoDigitado = Number(iano.value);
+            if (anoDigitado >= 1900 && anoDigitado <= atual ) {
+                iidade.innerHTML = Number(atual) - Number(iano.value);
+            }else if (anoDigitado > atual || (anoDigitado < 1900 && iano.value.length > 0)) {
+                iidade.innerHTML = "Ano Inválido!";
+            } else {
+                iidade.innerHTML = 0;
+            }
+        }
+    </script>
+</body>
+</html>
+    <!--
+    A Tag <script>
+    Ela serve como uma "caixa" para avisar o navegador que tudo o que estiver ali dentro não é HTML nem CSS, mas sim código JavaScript puro que deve ser executado.
+
+    A Função function CalcIdade() { ... }
+    Uma função é um bloco de código que guarda uma receita de instruções. Ela fica guardada esperando ser chamada.Quem chama essa função? No seu HTML, na linha 13, você colocou o atributo oninput="CalcIdade()".
+    Isso significa: "Toda vez que o usuário digitar ou apagar um número dentro do campo de ano, execute a receita CalcIdade imediatamente".
+
+    Pegando o Ano Atual (let atual = new Date().getFullYear())
+    Esta linha descobre o ano em que o usuário está acessando o site de forma totalmente automática.
+    let atual: Cria uma variável (uma caixinha na memória do computador) chamada "atual" para guardar o resultado.
+    new Date(): É um objeto do JavaScript que puxa a data e a hora exatas do relógio do computador ou celular de quem está navegando.
+    .getFullYear(): É um método que "suga" apenas os 4 dígitos do ano atual dessa data (por exemplo, 2026).
+
+    -->
