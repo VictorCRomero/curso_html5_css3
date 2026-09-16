@@ -32,7 +32,7 @@
             let atual = new Date().getFullYear();
             let anoDigitado = Number(iano.value);
             if (anoDigitado >= 1900 && anoDigitado <= atual ) {
-                iidade.innerHTML = Number(atual) - Number(iano.value);
+                iidade.innerHTML = atual - anoDigitado;
             }else if (anoDigitado > atual || (anoDigitado < 1900 && iano.value.length > 0)) {
                 iidade.innerHTML = "Ano Inválido!";
             } else {
