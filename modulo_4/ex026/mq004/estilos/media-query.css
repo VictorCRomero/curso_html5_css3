@@ -53,7 +53,7 @@ Pequenas telas e Celulares
     img#tv {display: none;}
 }
 /*Desktop*/
-@media screen and (min-width: 1024px) and (max-width:1600px) {
+@media screen and (min-width: 1024px) and (max-width:1200px) {
     body {
         background-image: url(../imagens/back-pc.jpg);
     }
@@ -64,7 +64,7 @@ Pequenas telas e Celulares
     img#tv {display: none;}
 }
 /*Grandes Telas*/
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 1200px) {
     body {
         background-image: url(../imagens/back-tv.jpg);
     }
