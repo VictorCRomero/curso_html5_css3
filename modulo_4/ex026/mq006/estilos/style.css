@@ -21,7 +21,7 @@ span#imenu {
     color: white;
     display: block;
     text-align: center;
-    padding: 14px;
+    padding: 8px;
     cursor: pointer;
 }
 span#imenu:hover {
@@ -41,8 +41,7 @@ menu a {
     text-align: center;
     background-color: rgb(87, 87, 87);
     color: white;
-    border-top:  2px solid gray;
-    box-sizing: border-box;
+    border-top: 2px solid gray;
 }
 menu a:hover {
     background-color: gray;

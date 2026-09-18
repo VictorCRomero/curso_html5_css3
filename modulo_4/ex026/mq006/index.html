@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="estilos/media-query.css">
 
 </head>
-<body>
+<body onresize="mudouTamanho()">
     <header>
         <h1>Meu Site</h1>
         <span id="imenu" class="material-symbols-outlined" onclick="clickMenu()"> menu
@@ -33,6 +33,13 @@
         </article>
     </main>
     <script>
+        function mudouTamanho() {
+            if (window.innerWidth > 768 && itens.style.display == 'block'){
+                itens.style.display = 'inline-block'
+            } else if (window.innerWidth <= 768 && itens.style.display == 'inline-block') {
+                itens.style.display = 'block'
+            }
+        }
         function clickMenu() {
             if (window.innerWidth <= 768){
                 if (itens.style.display == 'block') {

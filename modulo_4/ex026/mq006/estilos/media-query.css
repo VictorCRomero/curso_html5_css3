@@ -5,8 +5,14 @@
     }
     menu {
         display: none;
+        vertical-align: top;
     }
-    menu ul , menu li, menu a{
+     menu li, menu ul {
         display: inline-block;
+    }
+    menu a {
+        display: inline-block;
+        padding-bottom: 11.5px;
+        border-top: 0;
     }
 }
