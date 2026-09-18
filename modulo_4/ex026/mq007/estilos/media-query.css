@@ -1,0 +1,18 @@
+@charset "UTF-8";
+@media screen and (min-width: 768px) {
+    span#imenu {
+        display: inline-block;
+    }
+    menu {
+        display: none;
+        vertical-align: top;
+    }
+     menu li, menu ul {
+        display: inline-block;
+    }
+    menu a {
+        display: inline-block;
+        padding-bottom: 11.5px;
+        border-top: 0;
+    }
+}
