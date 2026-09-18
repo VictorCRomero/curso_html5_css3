@@ -65,7 +65,7 @@ Pequenas telas e Celulares
     img#tv { display: none; }
 }
 /*Grandes Telas*/
-@media screen and (min-width: 1300px) {
+@media screen and (min-width: 1301px) {
     body {
         background-image: url(../imagens/back-tv.jpg);
     }
