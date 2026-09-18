@@ -16,9 +16,8 @@ Grandes telas: acima de 1601px
         font-family: 'Courier New', Courier, monospace;
     }
     body {
-        background-image: url(../imagens/back-print.jpg); /*não aparece*/
-         print-color-adjust: exact;
-         -webkit-print-color-adjust: exact;
+        background-image: url(../imagens/back-print.jpg);
+        background-position: center center;
     }
     main {
         width: 90vw;
