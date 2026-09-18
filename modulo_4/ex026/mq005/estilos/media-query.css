@@ -1,12 +1,15 @@
 @charset "UTF-8";
 @media screen and (min-width: 768px) {
     span#imenu {
-        display: inline-block;
+        display: none;
     }
     menu {
-        display: none;
+        display: block;
     }
     menu ul , menu li, menu a{
         display: inline-block;
+    }
+    main {
+        width: 768px;
     }
 }

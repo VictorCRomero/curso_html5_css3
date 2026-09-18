@@ -21,8 +21,12 @@ span#imenu {
     color: white;
     display: block;
     text-align: center;
-    padding: 14px;
+    padding: 10px;
     cursor: pointer;
+}
+span#imenu:hover {
+    background-color: white;
+    color: black;
 }
 menu {
     display: none;
