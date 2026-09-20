@@ -9,12 +9,15 @@
     <link rel="stylesheet" href="estilos/media-query.css">
 
 </head>
-<body onresize="mudouTamanho()">
+<body>
     <header>
         <h1>Meu Site</h1>
-        <span id="imenu" class="material-symbols-outlined" onclick="clickMenu()"> menu
-        </span>
-        <menu id="itens">
+        <input type="checkbox" name="checkmenu" id="icheckmenu" class="docheckmenu">
+        <label for="icheckmenu">
+            <span id="imenu" class="material-symbols-outlined"> menu
+            </span>
+        </label>
+        <menu id="iditensmenu" class="itensmenu">
             <ul>
                 <li><a href="#">Opção 1</a></li>
                 <li><a href="#">Opção 2</a></li>
@@ -32,29 +35,5 @@
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos consequatur ducimus molestiae placeat officia eveniet ullam in sed odio saepe! Unde voluptates sapiente repellat sunt quod earum consequuntur nulla praesentium. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione vitae natus enim totam dignissimos velit, maiores dolore voluptates fuga, ipsam, earum itaque veniam sapiente quidem perspiciatis voluptas ducimus et magni. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt esse atque iure excepturi aperiam ab modi assumenda. Illo, reprehenderit, aliquam omnis impedit animi delectus, in placeat non rerum tempore eum.</p>
         </article>
     </main>
-    <script>
-        function mudouTamanho() {
-            if (window.innerWidth > 768 && itens.style.display == 'block'){
-                itens.style.display = 'inline-block'
-            } else if (window.innerWidth <= 768 && itens.style.display == 'inline-block') {
-                itens.style.display = 'block'
-            }
-        }
-        function clickMenu() {
-            if (window.innerWidth <= 768){
-                if (itens.style.display == 'block') {
-                itens.style.display = 'none'
-                } else {
-                itens.style.display = 'block'
-                }
-            } else {
-                if (itens.style.display == 'inline-block') {
-                itens.style.display = 'none'
-                } else {
-                itens.style.display = 'inline-block'
-                }
-            }
-        }
-    </script>
 </body>
 </html>

@@ -16,6 +16,9 @@ header > h1 {
     padding: 10px;
     text-align: center;
 }
+.docheckmenu {
+    display: none;
+}
 span#imenu {
     background-color: rgb(48, 48, 48);
     color: white;
@@ -28,13 +31,13 @@ span#imenu:hover {
     background-color: white;
     color: black;
 }
-menu {
+.itensmenu {
     display: none;
 }
-menu ul {
+.itensmenu ul {
     list-style-type: none;
 }
-menu a {
+.itensmenu a {
     display: block;
     padding: 10px;
     text-decoration: none;
@@ -43,8 +46,11 @@ menu a {
     color: white;
     border-top: 2px solid gray;
 }
-menu a:hover {
+.itensmenu a:hover {
     background-color: gray;
+}
+.docheckmenu:checked ~ .itensmenu {
+    display: block;
 }
 main {
     width: 90vw;

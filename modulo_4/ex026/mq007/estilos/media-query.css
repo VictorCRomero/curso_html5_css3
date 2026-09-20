@@ -3,16 +3,19 @@
     span#imenu {
         display: inline-block;
     }
-    menu {
+    .itensmenu {
         display: none;
         vertical-align: top;
     }
-     menu li, menu ul {
+     .itensmenu li, .itensmenu ul {
         display: inline-block;
     }
-    menu a {
+    .itensmenu a {
         display: inline-block;
         padding-bottom: 11.5px;
         border-top: 0;
+    }
+    .docheckmenu:checked ~ .itensmenu {
+    display:inline-block;
     }
 }
