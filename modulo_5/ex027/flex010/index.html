@@ -14,9 +14,14 @@
             background-color: lightskyblue;
             border: 1px solid black;
             text-align: center;
-            flex-basis: 150px;
+            flex-basis: 250px;
+            flex-shrink: 1;
+            flex-grow: 1;
         }
-        /*flex-basis:; tenta segurar na dimensão que definiu, no caso quando for flex-nowrap:; e o tamanho do container for menor que o tamanho do somatório dos itens com flex-basis:; definidos o tamanho do definido pelo flex-basis:; deixa de ser seguido */
+        /*
+            flex-shrink: 0; flex-grow: 0; desligado
+            flex-shrink: 1; flex-grow: 1; ligado
+        */
     </style>
 </head>
 <body>
@@ -24,10 +29,6 @@
         <div class="item" id="i1">A</div>
         <div class="item" id="i2">B</div>
         <div class="item" id="i3">C</div>
-        <div class="item" id="i4">D</div>
-        <div class="item" id="i5">E</div>
-        <div class="item" id="i6">F</div>
-        <div class="item" id="i7">G</div>
     </div>
 </body>
 </html>
