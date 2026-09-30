@@ -7,25 +7,35 @@
     <style>
         div.container {
             display: grid;
-            height: 250px;
             border: 3px solid blue;
-            grid-template: repeat(3, auto) / repeat(3, auto);
+            grid-template: repeat(3, 80px) / 100px 40% repeat(2, 1fr);
+            /*fr - fração*/ 
+            grid-auto-flow: row;
             /*
-            ordem do grid-tamplate: ;
-            grid-tamplate: rows / columns ;
+            grid-auto-flow:;
+            definindo exatamente como e onde os elementos filhos que não possuem coordenadas fixas devem ser encaixados no layout.
+            1. Direção do Fluxo (row vs column)
+            Define o eixo principal para onde os novos itens vão caminhar conforme entram no grid.
+            • row (Padrão): O navegador coloca os itens um ao lado do outro (horizontalmente). Quando a linha enche, ele cria uma nova linha abaixo e continua.
+            • column: O navegador empilha os itens um abaixo do outro (verticamente). Quando a coluna enche, ele cria uma nova coluna à direita e continua.
+            2. Inteligência de Preenchimento (dense)
+            Muda o comportamento do algoritmo de "estrito" para "oportunista".
+            • Sem dense (Comportamento normal): O navegador avança sempre para a frente. Se um item for muito grande e não couber no espaço restante da linha atual, o navegador pula para a próxima linha, deixando um "buraco" vazio para trás.
+            • Com dense (Modo denso): O navegador se torna inteligente. Se um item grande deixar um buraco para trás, o navegador varre os próximos itens menores da lista do HTML e os move para trás para preencher aquele espaço vazio, maximizando o uso da tela.
+            • grid-auto-flow: row; -> Anda para o lado, respeita a ordem do HTML, deixa buracos se necessário.
+            • grid-auto-flow: column; -> Anda para baixo, respeita a ordem do HTML, deixa buracos se necessário.
+            • grid-auto-flow: row dense; -> Anda para o lado e move itens menores para trás para tapar buracos.
+            • grid-auto-flow: column dense; -> Anda para baixo e move itens menores para trás para tapar buracos.
+
+
             */
-            /*repeat (3, auto) = auto auto auto*/
+            grid-auto-rows: 80px;
+            /*cria novas linhas automaticamente*/
+            grid-auto-columns: 120px;
+            /*cria novas colunas automaticamente*/
             gap: 5px;
-            place-items: start center;
-            place-content: space-between end;
-            /*
-            ordem do place-items: ;
-            place-items: align justify;
-            */
-            /*
-            ordem do place-content: ;
-            place-content: align justify;
-            */ 
+            place-items: normal normal;
+            place-content: normal normal;
         }
         div.item {
             border: 3px solid red;
@@ -43,6 +53,8 @@
         <div class="item">F</div>
         <div class="item">G</div>
         <div class="item">H</div>
+        <div class="item">I</div>
+        <div class="item">J</div>
     </div>
 </body>
 </html>
